@@ -63,7 +63,7 @@ App.controller('login', ['$scope', '$http', '$state','$rootScope','$interval','$
   
   $http({
   method:'POST',
-  url:'http://portal-server-empportal.apps.ose.canopy-cloud.com/login',
+  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/login',
   data:login,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
@@ -128,7 +128,7 @@ var signup={
   
   $http({
   method:'POST',
-  url:'http://portal-server-empportal.apps.ose.canopy-cloud.com/registerEmployee',
+  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/registerEmployee',
   data:signup,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
@@ -185,7 +185,7 @@ App.controller('showemployee', ['$scope', '$http', '$state','$rootScope','$inter
   self.determinateValue = 1;
   $http({
   method:'GET',
-  url:'http://portal-server-empportal.apps.ose.canopy-cloud.com/employees',
+  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/employees',
   
   }).success(function (data, status, headers, config) {
       //alert('success!!! Employee Fetched !!!');
@@ -199,7 +199,7 @@ $scope.remove=function(id,index){
 confirm('Do yo Want to DELETE Employee: employee id'+id);
 $http({
   method:'DELETE',
-  url:'http://portal-server-empportal.apps.ose.canopy-cloud.com/delete/'+id
+  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/delete/'+id
   
   }).success(function (data, status, headers, config) {
         //alert('success!!! Employee Fetched !!!');
@@ -240,7 +240,7 @@ App.controller('EmployeeUpdate', ['$scope', '$http', '$state','$rootScope', func
 var uid=$rootScope.updateId;
 $http({
   method:'GET',
-  url:'http://portal-server-empportal.apps.ose.canopy-cloud.com/getEmployeeInfo/'+uid
+  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/getEmployeeInfo/'+uid
   
   }).success(function (data, status, headers, config) {
         alert('success!!! Employee Information Fetched !!!');
@@ -268,7 +268,7 @@ var employeeupdatedata={
 
   $http({
   method:'POST',
-  url:'http://portal-server-empportal.apps.ose.canopy-cloud.com/updateEmployee',
+  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/updateEmployee',
   data:employeeupdatedata,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
