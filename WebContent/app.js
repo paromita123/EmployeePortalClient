@@ -63,7 +63,7 @@ App.controller('login', ['$scope', '$http', '$state','$rootScope','$interval','$
   
   $http({
   method:'POST',
-  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/login',
+  url:'http://employeeport1-employeeportalapp11.apps.na1.openshift.opentlc.com/login',
   data:login,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
@@ -128,7 +128,7 @@ var signup={
   
   $http({
   method:'POST',
-  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/registerEmployee',
+  url:'http://employeeport1-employeeportalapp11.apps.na1.openshift.opentlc.com/registerEmployee',
   data:signup,
   header:{'Content-Type':'application/json'}
   }).success(function (data, status, headers, config) {
@@ -185,7 +185,7 @@ App.controller('showemployee', ['$scope', '$http', '$state','$rootScope','$inter
   self.determinateValue = 1;
   $http({
   method:'GET',
-  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/employees',
+  url:'http://employeeport1-employeeportalapp11.apps.na1.openshift.opentlc.com/employees',
   
   }).success(function (data, status, headers, config) {
       //alert('success!!! Employee Fetched !!!');
@@ -199,7 +199,7 @@ $scope.remove=function(id,index){
 confirm('Do yo Want to DELETE Employee: employee id'+id);
 $http({
   method:'DELETE',
-  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/delete/'+id
+  url:'http://employeeport1-employeeportalapp11.apps.na1.openshift.opentlc.com/delete/'+id
   
   }).success(function (data, status, headers, config) {
         //alert('success!!! Employee Fetched !!!');
@@ -240,7 +240,7 @@ App.controller('EmployeeUpdate', ['$scope', '$http', '$state','$rootScope', func
 var uid=$rootScope.updateId;
 $http({
   method:'GET',
-  url:'http://employeeportal-db1.apps.na1.openshift.opentlc.com/getEmployeeInfo/'+uid
+  url:'http://employeeport1-employeeportalapp11.apps.na1.openshift.opentlc.com/getEmployeeInfo/'+uid
   
   }).success(function (data, status, headers, config) {
         alert('success!!! Employee Information Fetched !!!');
